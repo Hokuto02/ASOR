@@ -9,6 +9,6 @@ int main(int argc, char *argv[]){
         printf("ERROR EN TIME Nº: %d, %s \n", errno, strerror(errno));
         return -1;
     }
-    printf("La hora en segundos desde Epoch: %d\n", t);
+    printf("La hora en segundos desde Epoch: %ld\n", t);
     return 0;
 }
