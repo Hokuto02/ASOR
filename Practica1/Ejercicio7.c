@@ -12,12 +12,12 @@ int main(int argc, char *argv[]){
         printf("The maximum  number of links to the file: %ld \n", n);
     n = pathconf(".", _PC_PATH_MAX);
     if(n == -1)
-        printf("ERROR EN SYSCONF _PC_PATH_MAX Nº: %d, %s \n", errno, strerror(errno));
+        printf("ERROR EN PATHCONF _PC_PATH_MAX Nº: %d, %s \n", errno, strerror(errno));
     else 
         printf("The maximum length of a relative pathname: %ld \n", n);
     n = pathconf(".", _PC_NAME_MAX);
     if(n == -1)
-        printf("ERROR EN SYSCONF _PC_NAME_MAX Nº: %d, %s \n", errno, strerror(errno));
+        printf("ERROR EN PATHCONF _PC_NAME_MAX Nº: %d, %s \n", errno, strerror(errno));
     else 
         printf("The maximum length of a filename in the directory: %ld \n", n);
     return 0;
