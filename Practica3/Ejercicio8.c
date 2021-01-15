@@ -20,9 +20,9 @@ int main(int argc, char *argv[]){
             printf("Hijo con PID %i\n", getpid());
             sleep(2);
             int fdout, fderr, fdnull;
-            fdout =  open("./tmp/daemon.out", O_RDWR | O_CREAT | O_TRUNC, 00777);
-            fderr =  open("./tmp/daemon.err", O_RDWR | O_CREAT | O_TRUNC, 00777);
-            fdnull =  open("./dev/null", O_RDWR | O_CREAT | O_TRUNC, 00777);
+            fdout =  open("/tmp/daemon.out", O_RDWR | O_CREAT | O_TRUNC, 00777);
+            fderr =  open("/tmp/daemon.err", O_RDWR | O_CREAT | O_TRUNC, 00777);
+            fdnull =  open("/dev/null", O_RDWR , 00777);
             if(fdout == -1 || fderr == -1 || fdnull == -1){
                 perror("Error en open ");
                 return -1;
