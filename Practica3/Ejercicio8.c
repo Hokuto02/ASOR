@@ -29,8 +29,11 @@ int main(int argc, char *argv[]){
             }
             int fd0, fd1, fd2;
             fd0 = dup2(fdnull, 0);
+            close(fdnull);
             fd1 = dup2(fdout, 1);
+            close(fdout);
             fd2 = dup2(fderr, 2);
+            close(fderr);
             if(fd0 == -1 || fd1 == -1 || fd2 == -1){
                 perror("Error en dup2 ");
                 return -1;
