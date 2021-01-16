@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int contSIGINT = 0;
-int contSIGTSTP = 0;
+volatile int contSIGINT = 0;
+volatile int contSIGTSTP = 0;
 
 void manejador(int signal){
     switch(signal){
